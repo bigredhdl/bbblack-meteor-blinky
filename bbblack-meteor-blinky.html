@@ -1,0 +1,15 @@
+<head>
+  <title>bbblack-meteor-blinky</title>
+</head>
+
+<body>
+  <h1>Toggle the LEDs on my BeagleBoneBlack</h1>
+
+  {{> LEDs}}
+</body>
+
+<template name="LEDs">
+  {{#each lights}}
+    <button class="toggle {{state}}">{{name}}</button>
+  {{/each}}
+</template>
