@@ -18,7 +18,7 @@ Deploy this app to meteor.com.  Note that you need to change the meteor.com URL 
 cd bbblack-meteor-blinky
 meteor deploy --debug bbblack-meteor-blinky.meteor.com
 ```
-The --debug is not necessary, but it easier to play with the client side code using the browser's development tools.
+The --debug is not necessary, but it makes it easier to play with the client side code using the browser's development tools.
 
 ###BeagleBone Black
 Now we get to hook the beaglebone black into the Meteor server.  I should note that I used a rev C BeagleBone Black with Debian pre-loaded and BoneScript 0.2.4.  If you still have Angstrom on your BBB you may want to load the latest Debian image.
@@ -29,13 +29,14 @@ git clone https://github.com/bigredhdl/bbblack-meteor-blinky.git
 cd bbblack-meteor-blinky/private
 ```
 
-You probably also need to at least add the ejson package to node.
+You probably also need to at least add the ejson and ddp packages to node.
 ```
 npm install ejson
+npm install ddp
 ```
-If you get any erros from node.js about missing packages you should be able to install them via npm as well (i.e. ddp, underscore)
+If you get any errors from node.js about missing packages you should be able to install them via npm as well (i.e. underscore etc...)
 
-One more thing before we get to blink something.  You must change line 14 of bbblack-meteor-blinky-hardware.js so that the server URL matches the one we used above when we deplyed to the meteor.com server.
+One more thing before we get to blink something.  You must change line 14 of bbblack-meteor-blinky-hardware.js so that the server URL matches the one we used above when we deployed to the meteor.com server.
 
 ```
 host : "bbblack-meteor-blinky.meteor.com",
